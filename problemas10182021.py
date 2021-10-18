@@ -28,5 +28,14 @@ print(bases)
 print(bases[2])
 
 # mostrar una sublista de la lista
-# 
+# Para definir los intervalos, el último número no se tiene en cuenta
 print(bases[1:4])
+
+# Las listas son mutables, se pueden añadir y quitar elementos de la lista, y se pueden modificar
+print("El último elemento de la lista es: " + bases[3])
+bases[3] = 'U'
+print("El último elemento de la lista ahora es: " + bases[3] + "\nAhora son las bases del RNA")
+
+# El método de ordenación "sort" pertence a todas las listas
+bases.sort()
+print(f"La lista ordenada: {bases}")
