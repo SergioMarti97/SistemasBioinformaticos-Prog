@@ -88,6 +88,7 @@ mapDNATranslate = {
     "GG." : "Glicina"          # 21
 }
 
+
 # Esta función traduce un codon, usando un hash map (diccionario)
 def translate_with_map(codon):
     for key in mapDNATranslate.keys():
