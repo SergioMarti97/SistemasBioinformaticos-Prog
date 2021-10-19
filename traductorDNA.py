@@ -4,6 +4,12 @@ import random as rnd
 import re
 import time
 
+#=====================================================================#
+
+##########
+# CLASES #
+##########
+
 # Esta enumeración representa las formas de mostrar una proteína
 class WaysShowProteins(Enum):
     EXTEND = 1 # Extendido
@@ -18,6 +24,7 @@ class Aminoacid():
         self.nameComplete = nameComplete
         self.nameRedux = nameRedux
         self.letter = letter
+
 
 # Esta clase cotiene los métodos para traducir una cadena de DNA     
 class DNAtranslater():
@@ -271,6 +278,12 @@ class DNAtranslater():
         return prot
 
 
+#=====================================================================#
+
+#############
+# FUNCIONES #
+#############
+
 # Función para mostrar una proteína
 def show_prot(prot, wayShowProt = 1):
     prot_seq = ""
@@ -523,7 +536,12 @@ def obtain_proteins(seq):
     return prots
 
 
-# COMIENZO DEL PROGRAMA
+#=====================================================================#
+
+#########################
+# COMIENZO DEL PROGRAMA #
+#########################
+
 lenght = 30
 lenght_divisore_line = 15
 print(f"Generando la cadena de DNA. Longitud: {lenght}pb")
@@ -562,3 +580,5 @@ print(f"{'-' * lenght_divisore_line}")
 print("** PROTEÍNAS **")
 prots = obtain_proteins(seq)
 print(f"{prots}\nNúmero de proteínas: {len(prots)}")
+
+#=====================================================================#

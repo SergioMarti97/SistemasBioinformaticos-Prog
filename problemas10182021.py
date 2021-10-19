@@ -82,7 +82,7 @@ def fecha_to_dia(day, month):
 
 day = int(input("Introduce un día (0 - 31): "))
 month = int(input("Introduce un mes (1 - 12): "))
-print(fecha_to_dia(day, month))
+print(f"El día {day} del mes {month} es el día {fecha_to_dia(day, month)} del año\n")
 
 
 
@@ -99,11 +99,11 @@ dicNotasAlumnos = {
     "Anastasia Kalafnikove" : 10.0 
 }
 
-print(dicNotasAlumnos)
+print(f"El diccionario: {dicNotasAlumnos}")
 
 # Los valores del diccionario
 notas = list(dicNotasAlumnos.values())
-print(notas)
+print(f"Solo las notas del diccionario: {notas}")
 
 # Los diccionarios son muy útiles porque permiten acceder a los valores por su clave
 
