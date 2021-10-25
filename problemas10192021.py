@@ -29,7 +29,7 @@ def SumarDTres(dur1, dur2, dur3):
 
 
 def ShowDur(dur):
-    return "%dh %dmin %dseg".format(dur['h'], dur['m'], dur['s'])
+    print("%dh %dmin %dseg".format(dur['h'], dur['m'], dur['s']))
 
 
 def CompareD(dur1, dur2):
@@ -199,7 +199,24 @@ def IndeterminadosPosicionRecursivo(count, args):
         IndeterminadosPosicionRecursivo(count, args)
 
 
+# de forma recursiva xq estoy loco @.@
+def RecursivoContarA(car, count):
+    if car == '#':
+        return count
+    else:
+
+        if car == 'A':
+            count += 1
+        
+        car = input("Introduce un carácter: ")
+        
+        RecursivoContarA(car, count)
+    
+
 # Programa
+
+# Sumar dos duraciones distintas, guardadas como un diccionario
+print("========= Ejercicio de sumar dos duraciones distintas =========")
 
 dur1 = {}
 dur2 = {}
@@ -212,9 +229,20 @@ dur2['h'] = 2 #int(input("Hora duración 2: "))
 dur2['m'] = 30 #int(input("Minuto duración 2: "))
 dur2['s'] = 12 #int(input("Segundo duración 2: "))
 
-durTot = SumarD(dur1, dur2)
+print("Las dos duraciones: ")
+ShowDur(dur1)
+ShowDur(dur1)
 
+print("La duracion total: ")
+durTot = SumarD(dur1, dur2)
+ShowDur(durTot)
+
+print("Sumar las dos duraciones iniciales más la suma de las dos duraciones: ")
+durTot = SumarDTres(dur1, dur2, durTot)
 print(durTot)
+
+# Algoritmo para obtener el dia de después, dada una fecha
+print("========= Ejercicio del algoritmo para obtener el dia siguiente a una fecha dada =========")
 
 date = {
     'A' : 2021,
@@ -222,10 +250,71 @@ date = {
     'd' : 28
 }
 
-print(SigFecha(date))
+print(f"El día después de {date} es {SigFecha(date)}")
 
-print(CodonTranslateAA('AAA').nameComplete)
+# Obtener un aminoácido a partir de un codon, tres bases nitrogenadas
+print("========= Ejercicio para obtener un aminacido a partir de un triplete =========")
+
+codon = 'AAA'
+print(f"El codon {codon} codifica el aminoácido: {CodonTranslateAA('AAA').nameComplete}")
+
+# Función recursiva
+print("========= Función recursiva para mostrar una lista de valores =========")
 
 indeterminados = [1, 2, 3, 4, 5]
-
+print(indeterminados)
 IndeterminadosPosicionRecursivo(0, indeterminados)
+
+# Determinar el número de alaninas ('A') en una secuencia de aminoácidos representada
+# mediante un texto introducido por el telcado, uno por linea, con marca de fin #
+print("========= Ejercicios de Iteración =========")
+
+carToCount = 'A'
+carToStop = '#'
+
+car = input("Introduce un carácter: ")
+count = 0
+
+while car != carToStop:
+    if car == carToCount:
+        count += 1
+        
+    car = input("Introduce un carácter: ")
+
+print(f"El número total de '{carToCount}' es: {count}.")
+
+# El mismo bucle pero de forma recursiva
+print("========= El mismo ejercicio pero recursivo =========")
+
+count = RecursivoContarA(input("Introduce un carácter: "), 1)
+
+print(f"El número total de '{carToCount}' es: {count}.")
+
+
+# Contar las demás letras letras
+print("========= El primer ejercicio pero contando más letras =========")
+
+car = input("Introduce un carácter: ")
+countA = 0
+countT = 0
+countG = 0
+countC = 0
+
+while car != carToStop:
+    
+    if car == 'A':
+        countA += 1
+    elif car == 'T':
+        countT += 1
+    elif car == 'G':
+        countG += 1
+    elif car == 'C':
+        countC += 1
+    else:
+        print("Esa letra no está permitida. Solo se permite: A, T, G, C")
+
+    car = input("Introduce un carácter: ")
+
+print(f"El número total de 'A' es: {countA}.\nEl número total de 'T' es: {countT}\nEl número total de 'G' es: {countG}\nEl número total de 'C' es: {countC}")
+
+
