@@ -42,6 +42,7 @@ def ReadFromFile(fileName):
     return lines
 
 
+
 # Read from file, with resources
 def ReadFromFileWithResources(fileName):
     lines = []
@@ -118,7 +119,7 @@ def FindMotifInSequences(seqs, motif):
 # Programa
 #AverageGenesInCromosome()
 
-fileName = "sequencias.txt"
+fileName = "files/sequencias.txt"
 #numSeq = int(input("Introduce el número de secuencias que quieres generar: "))
 #sizeSeq = int(input("Introcue el tamaño de las secuencias que quieres generar: "))
 #seqs = RndDNAs(numSeq, sizeSeq)
