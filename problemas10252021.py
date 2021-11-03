@@ -120,6 +120,7 @@ def FindMotifInSequences(seqs, motif):
 #AverageGenesInCromosome()
 
 fileName = "files/sequencias.txt"
+
 #numSeq = int(input("Introduce el número de secuencias que quieres generar: "))
 #sizeSeq = int(input("Introcue el tamaño de las secuencias que quieres generar: "))
 #seqs = RndDNAs(numSeq, sizeSeq)
